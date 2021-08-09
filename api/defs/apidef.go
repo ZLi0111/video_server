@@ -6,6 +6,16 @@ type UserCredential struct {
 	Pwd      string `json:"pwd"`
 }
 
+type NewComment struct {
+	AuthorId int    `json:"author_id"`
+	Content  string `json:"content"`
+}
+
+type NewVideo struct {
+	AuthorId int    `json:"author_id"`
+	Name     string `json:"name"`
+}
+
 //response
 type SignedUp struct {
 	Success   bool   `json:"success"`
