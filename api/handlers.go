@@ -164,8 +164,6 @@ func DeleteVideo(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		sendErrorResponse(w, defs.ErrorDBError)
 		return
 	}
-
-	//	go utils.SendDeleteVideoRequest(vid)
 	sendNormalResponse(w, "", 204)
 }
 

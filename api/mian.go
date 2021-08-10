@@ -36,7 +36,7 @@ func RegisterHandlers() *httprouter.Router {
 
 	router.GET("/user/:username/videos", ListAllVideos)
 
-	//	router.DELETE("/user/:username/videos/:vid-id", DeleteVideo)
+	router.DELETE("/user/:username/videos/:vid-id", DeleteVideo)
 
 	router.POST("/videos/:vid-id/comments", PostComment)
 
