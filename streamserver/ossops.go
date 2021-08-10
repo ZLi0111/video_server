@@ -6,15 +6,13 @@ import (
 	"log"
 )
 
-//LTAI5tGoWXzMQog9xvoUcCHE
-// nrsYbc4k0FYbV1JgjHnJpXoTLLwo5C
 var EP string
 var AK string
 var SK string
 
 func init() {
-	AK = "LTAI5tGoWXzMQog9xvoUcCHE"
-	SK = "nrsYbc4k0FYbV1JgjHnJpXoTLLwo5C"
+	AK = ""
+	SK = ""
 	EP = config.GetOssAddr()
 }
 
