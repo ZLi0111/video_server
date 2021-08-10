@@ -152,22 +152,22 @@ func ListAllVideos(w http.ResponseWriter, r *http.Request, p httprouter.Params) 
 
 }
 
-// func DeleteVideo(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-// 	if !ValidateUser(w, r) {
-// 		return
-// 	}
+func DeleteVideo(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	if !ValidateUser(w, r) {
+		return
+	}
 
-// 	vid := p.ByName("vid-id")
-// 	err := dbops.DeleteVideoInfo(vid)
-// 	if err != nil {
-// 		log.Printf("Error in DeletVideo: %s", err)
-// 		sendErrorResponse(w, defs.ErrorDBError)
-// 		return
-// 	}
+	vid := p.ByName("vid-id")
+	err := dbops.DeleteVideoInfo(vid)
+	if err != nil {
+		log.Printf("Error in DeletVideo: %s", err)
+		sendErrorResponse(w, defs.ErrorDBError)
+		return
+	}
 
-// 	go utils.SendDeleteVideoRequest(vid)
-// 	sendNormalResponse(w, "", 204)
-// }
+	//	go utils.SendDeleteVideoRequest(vid)
+	sendNormalResponse(w, "", 204)
+}
 
 func PostComment(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	if !ValidateUser(w, r) {
