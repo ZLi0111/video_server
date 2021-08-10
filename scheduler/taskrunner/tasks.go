@@ -2,18 +2,21 @@ package taskrunner
 
 import (
 	"errors"
-	"github.com/zli0111/video_server/scheduler/dbops"
 	"log"
-	"os"
 	"sync"
+
+	"github.com/zli0111/video_server/scheduler/dbops"
+	"github.com/zli0111/video_server/scheduler/ossops"
 )
 
 func deleteVideo(vid string) error {
-	err := os.Remove("./videos/" + vid)
+	ossfn := "videos/" + vid
+	bn := "zli0111-videos1"
+	ok := ossops.DeleteObject(ossfn, bn)
 
-	if err != nil && !os.IsNotExist(err) {
+	if !ok {
 		log.Printf("Deleting video error, oss operation failed")
-		return err
+		return errors.New("Deleting video error")
 	}
 
 	return nil

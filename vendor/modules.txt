@@ -1,0 +1,12 @@
+# github.com/aliyun/aliyun-oss-go-sdk v2.1.10+incompatible
+## explicit
+github.com/aliyun/aliyun-oss-go-sdk/oss
+# github.com/go-sql-driver/mysql v1.6.0
+## explicit
+github.com/go-sql-driver/mysql
+# github.com/julienschmidt/httprouter v1.3.0
+## explicit
+github.com/julienschmidt/httprouter
+# golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
+## explicit
+golang.org/x/time/rate

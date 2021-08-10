@@ -18,9 +18,9 @@ func RegisterHandlers() *httprouter.Router {
 
 	router.POST("/api", apiHandler)
 
-	router.GET("/videos/:vid-id", proxyHandler)
+	router.GET("/videos/:vid-id", proxyVideoHandler)
 
-	router.POST("/upload/:vid-id", proxyHandler)
+	router.POST("/upload/:vid-id", proxyUploadHandler)
 
 	router.ServeFiles("/statics/*filepath", http.Dir("./templates"))
 
